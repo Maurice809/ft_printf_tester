@@ -6,7 +6,7 @@
 /*   By: tmoret <tmoret@student.42lausanne.ch>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 10:10:47 by tmoret            #+#    #+#             */
-/*   Updated: 2021/12/02 17:53:38 by tmoret           ###   ########.fr       */
+/*   Updated: 2021/12/02 19:30:35 by tmoret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,5 @@ int	main(void)
 	ft_pointeur(b);
 	ft_decimal(a);
 	ft_xx(a);
+	return (0);
 }
