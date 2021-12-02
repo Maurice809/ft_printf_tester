@@ -6,7 +6,7 @@ Tous les fichiers sont a la "Norminette"
 Utlisation : 
 
 ```sh
-curl -O http://cherprang.xfk48.com:3000/42_Lausanne/ft_printf_tester/raw/branch/master/eval.sh
+curl -O https://raw.githubusercontent.com/Maurice809/ft_printf_tester/main/eval.sh
 ```
 
 Cordilement
