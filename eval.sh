@@ -6,34 +6,44 @@
 #    By: tmoret <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 09:57:40 by tmoret            #+#    #+#              #
-#    Updated: 2021/12/02 14:35:12 by tmoret           ###   ########.fr        #
+#    Updated: 2021/12/02 15:23:38 by tmoret           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
+# Nom du project
+PROJECT=ft_printf
+
+# Nom du testeur
+FILE=ft_printf_tester
+REPO=https://github.com/Maurice809/ft_printf_tester.git
 
 echo
-echo "Bienvenue dans le ft_printf_tester !"
+echo "Bienvenue dans le $FILE !"
 echo "------------------------------------"
 
 if [ -n "$1" ]; then
     repo="$1"
-else
+elif [ ! -d "$PROJECT" ] ; then
     read -p "Coller votre Git repository : " repo
+elif [ ! -d "$PROJECT" ] ; then
+	git clone $repo $PROJECT
 fi
 
-git clone $repo ft_printf
-norminette ./ft_printf
+norminette $PROJECT
 sleep 10s
-git clone https://github.com/Maurice809/ft_printf_tester.git
 
-cd ft_printf_tester
+if [ ! -d "$FILE" ]; then
+git clone $REPO
+fi
+
+cd $FILE
 ./c.sh
 
 while :
 do
 echo "[CTRL+C pour STOP]"
 read -p "Refaire un test avec un autre chiffre ? " chiffre
-cd ft_printf_tester
+cd $FILE
 ./c.sh $chiffre
 done
