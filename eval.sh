@@ -6,7 +6,7 @@
 #    By: tmoret <marvin@42lausanne.ch>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/02 09:57:40 by tmoret            #+#    #+#              #
-#    Updated: 2021/12/02 15:23:38 by tmoret           ###   ########.fr        #
+#    Updated: 2021/12/02 15:33:36 by tmoret           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PROJECT=ft_printf
 
 # Nom du testeur
 FILE=ft_printf_tester
-REPO=https://github.com/Maurice809/ft_printf_tester.git
+REPOS=https://github.com/Maurice809/ft_printf_tester.git
 
 echo
 echo "Bienvenue dans le $FILE !"
@@ -26,7 +26,8 @@ if [ -n "$1" ]; then
     repo="$1"
 elif [ ! -d "$PROJECT" ] ; then
     read -p "Coller votre Git repository : " repo
-elif [ ! -d "$PROJECT" ] ; then
+fi
+if [ ! -d "$PROJECT" ] ; then
 	git clone $repo $PROJECT
 fi
 
@@ -34,7 +35,7 @@ norminette $PROJECT
 sleep 10s
 
 if [ ! -d "$FILE" ]; then
-git clone $REPO
+git clone $REPOS
 fi
 
 cd $FILE
