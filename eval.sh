@@ -22,6 +22,10 @@ echo
 echo "Bienvenue dans le $FILE !"
 echo "------------------------------------"
 
+if [ ! -f eval.sh ] ; then
+    cd ..
+fi
+
 if [ -n "$1" ]; then
     repo="$1"
 elif [ ! -d "$PROJECT" ] ; then
