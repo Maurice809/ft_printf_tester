@@ -6,7 +6,7 @@
 #    By: tmoret <thomas.moret@xfk48.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/01 19:09:46 by tmoret            #+#    #+#              #
-#    Updated: 2021/12/02 10:13:48 by tmoret           ###   ########.fr        #
+#    Updated: 2022/01/03 17:49:42 by Maurice809       ###   Lausanne.ch        #
 #                                                                              #
 # **************************************************************************** #
 #
@@ -18,12 +18,18 @@
 
 #!/bin/bash
 
+machine=$(uname)
+
 cp main.c ../ft_printf
 
 var_a=$(printf "%q" $1)
 
 if [ -n "$1" ]; then
-    sed -i "" "s/48/${var_a}/g" ../ft_printf/main.c
+	if [ "$machine" == "Linux" ]; then
+		sed -i "s/48/${var_a}/g" ../ft_printf/main.c
+	else
+		sed -i "" "s/48/${var_a}/g" ../ft_printf/main.c
+	fi
 fi
 
 cd ../ft_printf
